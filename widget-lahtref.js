@@ -1253,11 +1253,11 @@
                 const d = await r.json();
                 const used = Math.max(d.phone_count || 0, d.ip_count || 0, d.count || 0);
                 const restantes = Math.max(0, 3 - used);
-                if (restantes > 0) {
+                if (false && restantes > 0) {
                     const _txt = restantes + (restantes === 1 ? ' prova restante hoje' : ' provas restantes hoje');
                     _els.forEach(el => { el.textContent = _txt; el.classList.remove('is-warn'); });
                 } else {
-                    _els.forEach(el => { el.textContent = 'Limite de 3 provas atingido — pague R$1 via PIX para mais uma.'; el.classList.add('is-warn'); });
+                    _els.forEach(el => { el.textContent = ''; el.classList.remove('is-warn'); });
                 }
             } catch(_) { _els.forEach(el => { el.textContent = ''; el.classList.remove('is-warn'); }); }
         }
