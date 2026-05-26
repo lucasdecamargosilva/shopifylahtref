@@ -875,12 +875,24 @@
 
 
         // Selectors prioritizando Shopify (Lahtref) primeiro, depois Nuvemshop fallback
-        const imgContainers = [
-            // Lahtref (tema custom) — prioridade máxima
+        // No mobile, .mobile-selected-image é o slot da foto visível (mais preciso)
+        // No desktop, .custom-product-medias é o wrapper grid
+        const _isMobile = window.matchMedia('(max-width: 999px)').matches;
+        const imgContainers = _isMobile ? [
+            '.mobile-selected-image',
+            '.custom-product-medias',
+            '.custom-product-images-highlight',
+            '.product__media-wrapper', '.product__media', '.product__media-item',
+            '.product-gallery', '.product-gallery__media',
+            '.product-single__media', '.media-gallery',
+            '.product-image-main', '.product-media-container',
+            '[data-media-id]', '[data-product-media-type-image]',
+            '.js-product-slide', '.product-image-column', '.js-swiper-product',
+            '[data-store^="product-image-"]'
+        ] : [
             '.custom-product-medias',
             '.custom-product-images-highlight',
             '.mobile-selected-image',
-            // Shopify defaults
             '.product__media-wrapper', '.product__media', '.product__media-item',
             '.product-gallery', '.product-gallery__media',
             '.product-single__media', '.media-gallery',
