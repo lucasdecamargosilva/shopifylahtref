@@ -1142,6 +1142,8 @@
             pixPaymentId = null;
             preImg.style.display = 'none';
             if (facePlaceholder) facePlaceholder.style.display = 'flex';
+            try { cameraInput.value = ''; } catch(_) {}
+            try { galleryInput.value = ''; } catch(_) {}
             checkFields();
         };
 
