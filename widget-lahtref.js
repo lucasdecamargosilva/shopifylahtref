@@ -509,6 +509,8 @@
             font-family: var(--font-display); font-size: 17px;
             letter-spacing: 3px; text-transform: uppercase;
             cursor: pointer; transition: border-color 0.2s, background 0.2s; box-sizing: border-box;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 0;
         }
         .q-btn-outline:hover { border-color: var(--c-ink); background: var(--c-surface); }
 
