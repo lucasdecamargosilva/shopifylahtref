@@ -169,7 +169,7 @@
 
         /* ── Trigger (style alinhado ao auglio-tryon-btn-product-page) ── */
         .q-btn-trigger-ia {
-            position: absolute; top: 15px; right: 15px; z-index: 3;
+            position: absolute; top: 15px; left: 15px; z-index: 3;
             background: #555555 !important; color: #fff !important;
             border: none; padding: 8px 14px; border-radius: 16px;
             font-size: 13px; font-weight: 600; cursor: pointer;
@@ -875,31 +875,21 @@
 
 
         // Selectors prioritizando Shopify (Lahtref) primeiro, depois Nuvemshop fallback
-        // No mobile, .mobile-selected-image é o slot da foto visível (mais preciso)
-        // No desktop, .custom-product-medias é o wrapper grid
+        // Desktop: prende na PRIMEIRA foto do grid (.image-high:first-child)
+        // Mobile: prende no slot da foto visível (.mobile-selected-image)
         const _isMobile = window.matchMedia('(max-width: 999px)').matches;
         const imgContainers = _isMobile ? [
             '.mobile-selected-image',
             '.custom-product-medias',
-            '.custom-product-images-highlight',
             '.product__media-wrapper', '.product__media', '.product__media-item',
             '.product-gallery', '.product-gallery__media',
-            '.product-single__media', '.media-gallery',
-            '.product-image-main', '.product-media-container',
-            '[data-media-id]', '[data-product-media-type-image]',
-            '.js-product-slide', '.product-image-column', '.js-swiper-product',
-            '[data-store^="product-image-"]'
+            '.product-single__media', '.media-gallery'
         ] : [
-            '.custom-product-medias',
             '.custom-product-images-highlight',
-            '.mobile-selected-image',
+            '.custom-product-medias',
             '.product__media-wrapper', '.product__media', '.product__media-item',
             '.product-gallery', '.product-gallery__media',
-            '.product-single__media', '.media-gallery',
-            '.product-image-main', '.product-media-container',
-            '[data-media-id]', '[data-product-media-type-image]',
-            '.js-product-slide', '.product-image-column', '.js-swiper-product',
-            '[data-store^="product-image-"]'
+            '.product-single__media', '.media-gallery'
         ];
 
         function tryPlaceTriggerBtn() {
