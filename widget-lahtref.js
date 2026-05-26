@@ -872,6 +872,11 @@
 
         // Selectors prioritizando Shopify (Lahtref) primeiro, depois Nuvemshop fallback
         const imgContainers = [
+            // Lahtref (tema custom) — prioridade máxima
+            '.custom-product-medias',
+            '.custom-product-images-highlight',
+            '.mobile-selected-image',
+            // Shopify defaults
             '.product__media-wrapper', '.product__media', '.product__media-item',
             '.product-gallery', '.product-gallery__media',
             '.product-single__media', '.media-gallery',
