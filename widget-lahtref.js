@@ -497,6 +497,8 @@
             font-family: var(--font-display); font-size: 17px;
             letter-spacing: 3px; text-transform: uppercase;
             cursor: pointer; transition: opacity 0.2s; box-sizing: border-box;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 0;
         }
         .q-btn-black:hover:not(:disabled) { opacity: 0.82; }
         .q-btn-black:disabled { background: #ccc; cursor: not-allowed; }
