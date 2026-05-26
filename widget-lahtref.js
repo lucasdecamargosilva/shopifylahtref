@@ -721,18 +721,11 @@
                             <div id="q-provas-restantes" class="q-provas-msg"></div>
                         </div>
 
-                        <!-- Product photo selector (carousel) -->
-                        <div class="q-photo-selector-wrap" id="q-photo-selector-group">
-                            <span class="q-field-label">Escolha a foto do &#243;culos</span>
-                            <div class="q-photo-carousel">
-                                <button type="button" class="q-photo-arrow q-photo-arrow-left" id="q-photo-arrow-left" aria-label="Anterior">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                                </button>
-                                <div class="q-photo-thumbs" id="q-photo-thumbs"></div>
-                                <button type="button" class="q-photo-arrow q-photo-arrow-right" id="q-photo-arrow-right" aria-label="Pr&#243;xima">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                                </button>
-                            </div>
+                        <!-- Seletor de fotos do produto desativado (Lahtref usa imagem atual da variante) -->
+                        <div id="q-photo-selector-group" style="display:none;">
+                            <div id="q-photo-thumbs"></div>
+                            <button type="button" id="q-photo-arrow-left" style="display:none;"></button>
+                            <button type="button" id="q-photo-arrow-right" style="display:none;"></button>
                         </div>
 
                         <!-- Photo section -->
