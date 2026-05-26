@@ -163,8 +163,8 @@
             --c-line: #e8e8e8;
             --c-accent: #111111;
             --c-danger: #cc3333;
-            --font-display: 'Bebas Neue', sans-serif;
-            --font-body: 'DM Sans', sans-serif;
+            --font-display: 'magazine-grotesque-regular', 'DM Sans', sans-serif;
+            --font-body: 'magazine-grotesque-regular', 'DM Sans', sans-serif;
         }
 
         /* ── Trigger (style alinhado ao auglio-tryon-btn-product-page) ── */
@@ -211,6 +211,7 @@
             overflow-y: auto; box-sizing: border-box;
         }
         #q-modal-ia * { box-sizing: border-box; }
+        #q-modal-ia, #q-modal-ia * { text-transform: lowercase !important; }
 
         /* ── Card ── */
         .q-card-ia {
@@ -226,6 +227,7 @@
                 max-height: 96vh; border: none;
                 box-shadow: 0 32px 80px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.06);
                 overflow: hidden;
+                border-radius: 24px;
             }
         }
 
@@ -493,9 +495,9 @@
         .q-btn-black {
             width: 100%; height: 52px;
             background: var(--c-ink); color: #fff;
-            border: none; border-radius: 0;
+            border: none; border-radius: 999px;
             font-family: var(--font-display); font-size: 17px;
-            letter-spacing: 3px; text-transform: uppercase;
+            letter-spacing: 1.5px;
             cursor: pointer; transition: opacity 0.2s; box-sizing: border-box;
             display: flex; align-items: center; justify-content: center;
             text-align: center; padding: 0;
@@ -505,9 +507,9 @@
         .q-btn-outline {
             width: 100%; height: 52px;
             background: transparent; color: var(--c-ink);
-            border: 1.5px solid var(--c-line); border-radius: 0;
+            border: 1.5px solid var(--c-line); border-radius: 999px;
             font-family: var(--font-display); font-size: 17px;
-            letter-spacing: 3px; text-transform: uppercase;
+            letter-spacing: 1.5px;
             cursor: pointer; transition: border-color 0.2s, background 0.2s; box-sizing: border-box;
             display: flex; align-items: center; justify-content: center;
             text-align: center; padding: 0;
