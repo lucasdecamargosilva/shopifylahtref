@@ -167,23 +167,27 @@
             --font-body: 'DM Sans', sans-serif;
         }
 
-        /* ── Trigger (pill sobre foto, top-left) ── */
+        /* ── Trigger (style alinhado ao auglio-tryon-btn-product-page) ── */
         .q-btn-trigger-ia {
-            position: absolute; top: 14px; left: 14px; z-index: 100;
-            display: flex; align-items: center; justify-content: center; gap: 8px;
-            padding: 9px 14px;
-            background: rgba(60,60,60,0.92); color: #fff;
-            border: none; border-radius: 100px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', sans-serif;
-            font-size: 13px; font-weight: 500; letter-spacing: 0.2px;
-            cursor: pointer;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.22);
-            transition: background 0.2s, transform 0.2s;
-            white-space: nowrap;
-            width: auto; height: auto;
+            position: absolute; top: 15px; right: 15px; z-index: 3;
+            background: #555555 !important; color: #fff !important;
+            border: none; padding: 8px 14px; border-radius: 16px;
+            font-size: 13px; font-weight: 600; cursor: pointer;
+            letter-spacing: 0.3px;
+            display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+            line-height: 2; white-space: nowrap; box-sizing: border-box;
+            font-family: inherit;
         }
-        .q-btn-trigger-ia:hover { background: rgba(40,40,40,0.96); transform: translateY(-1px); }
-        .q-btn-trigger-ia svg { width: 16px; height: 16px; flex-shrink: 0; opacity: 0.95; }
+        .q-btn-trigger-ia:hover { filter: brightness(1.1); }
+        .q-btn-trigger-ia svg { width: 19px; height: 19px; flex-shrink: 0; }
+        @media (max-width: 999px) {
+            .q-btn-trigger-ia {
+                top: auto; right: auto;
+                bottom: 10px; left: 15px;
+                padding: 7px 16px; border-radius: 17px;
+            }
+            .q-btn-trigger-ia svg { width: 17px; height: 17px; }
+        }
 
         /* ── Inline button ── */
         .q-btn-inline-provador {
@@ -684,7 +688,7 @@
 
 
     // ─── IMAGEM DO BOTÃO (trigger) ─────────────────────────────────────────────
-    const stampImageHTML = `<span>Provador Virtual</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V5a1 1 0 0 1 1-1h3"/><path d="M20 8V5a1 1 0 0 0-1-1h-3"/><path d="M4 16v3a1 1 0 0 0 1 1h3"/><path d="M20 16v3a1 1 0 0 1-1 1h-3"/><circle cx="12" cy="10" r="3"/><path d="M7 18c0-2.5 2.2-4 5-4s5 1.5 5 4"/></svg>`;
+    const stampImageHTML = `<span>Provador Virtual</span><img src="https://lahtref.com.br/cdn/shop/t/100/assets/emoji-provador-virtual.svg?v=141670664508648936261779728036" alt="" style="width:19px;height:19px;flex-shrink:0;" />`;
 
 
 
