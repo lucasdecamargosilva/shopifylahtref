@@ -1460,7 +1460,8 @@
 
                 try {
                     const fd = new FormData();
-                    fd.append('person_image', userPhoto, 'person.jpg');
+                    const personResized = await resizeImage(userPhoto, 1024).catch(() => userPhoto);
+                    fd.append('person_image', personResized, 'person.jpg');
                     fd.append('whatsapp', '55' + phoneInput.value.replace(/\D/g, ''));
                     fd.append('phone_raw', phoneInput.value);
                     fd.append('product_name', prodName);
@@ -1498,7 +1499,8 @@
                     console.log('[PL Lahtref] Enviando', allProdImgs.length, 'fotos do produto');
                     for (let _pi = 0; _pi < allProdImgs.length; _pi++) {
                         try {
-                            const _b = await fetch(allProdImgs[_pi]).then(r => r.blob());
+                            const _bRaw = await fetch(allProdImgs[_pi]).then(r => r.blob());
+                            const _b = await resizeImage(_bRaw, 1024).catch(() => _bRaw);
                             if (_pi === 0) {
                                 fd.append('product_image', _b, 'product.jpg');
                             } else {
