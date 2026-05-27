@@ -599,7 +599,7 @@
         #q-result-img-col {
             width: 100%; max-height: 72vh; background: var(--c-surface);
             overflow: hidden; display: flex; align-items: center; justify-content: center;
-            border-radius: 20px; margin: 16px;
+            border-radius: 20px;
         }
         #q-result-img-col img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
 
