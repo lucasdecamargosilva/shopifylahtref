@@ -194,7 +194,7 @@
             display: flex; align-items: center; justify-content: center; gap: 7px;
             width: 100%; padding: 13px 16px;
             background: transparent; color: var(--c-ink);
-            border: 1.5px solid var(--c-ink); border-radius: 8px;
+            border: 1.5px solid var(--c-ink); border-radius: 999px;
             font-family: 'Work Sans', var(--font-body), sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
             cursor: pointer; transition: background 0.25s, color 0.25s;
             margin-bottom: 10px; box-sizing: border-box;
@@ -292,7 +292,7 @@
             color: #fff; font-weight: 700;
             background: var(--c-ink);
             border: 2px solid var(--c-ink);
-            border-radius: 8px;
+            border-radius: 18px;
             padding: 14px 18px;
             text-align: center;
             text-transform: uppercase;
@@ -332,7 +332,7 @@
             cursor: pointer; padding: 0; margin: 0;
             border: 1.5px solid var(--c-line);
             background: var(--c-surface);
-            overflow: hidden; border-radius: 4px;
+            overflow: hidden; border-radius: 14px;
             scroll-snap-align: start;
             transition: border-color 0.15s;
         }
@@ -399,7 +399,7 @@
             background: var(--c-surface);
             padding: 11px 14px; margin-bottom: 20px;
             font-size: 11.5px; color: var(--c-muted); line-height: 1.45;
-            border-radius: 6px;
+            border-radius: 16px;
         }
         .q-tip-box i { color: var(--c-ink); font-size: 15px; flex-shrink: 0; }
         /* ── Required field marker + shake feedback ── */
@@ -427,7 +427,7 @@
             font-size: 13px; font-weight: 600;
             letter-spacing: 0.3px;
             padding: 12px 16px;
-            border-radius: 8px;
+            border-radius: 18px;
             margin-bottom: 12px;
             text-align: center;
             box-shadow: 0 3px 10px rgba(204,51,51,0.25);
@@ -447,7 +447,7 @@
             margin: 0 auto 24px; cursor: pointer;
             display: flex; align-items: center; justify-content: center;
             overflow: hidden; background: var(--c-surface);
-            border-radius: 4px;
+            border-radius: 20px;
             transition: transform 0.2s;
         }
         .q-face-frame:hover { transform: scale(1.015); }
@@ -476,7 +476,7 @@
             border: 1.5px solid var(--c-line);
             background: transparent; color: var(--c-ink);
             font-family: var(--font-body); font-size: 12px; font-weight: 500;
-            cursor: pointer; transition: border-color 0.2s, background 0.2s; border-radius: 4px;
+            cursor: pointer; transition: border-color 0.2s, background 0.2s; border-radius: 999px;
         }
         .q-upload-btn:hover { border-color: var(--c-ink); background: var(--c-surface); }
         .q-upload-btn i { font-size: 16px; }
@@ -599,6 +599,7 @@
         #q-result-img-col {
             width: 100%; max-height: 72vh; background: var(--c-surface);
             overflow: hidden; display: flex; align-items: center; justify-content: center;
+            border-radius: 20px; margin: 16px;
         }
         #q-result-img-col img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
 
@@ -627,7 +628,7 @@
         }
         .q-related-card img {
             width: 100%; aspect-ratio: 1/1; object-fit: cover;
-            border: 1px solid var(--c-line); display: block; border-radius: 3px;
+            border: 1px solid var(--c-line); display: block; border-radius: 16px;
         }
         .q-related-card-name {
             font-size: 10px; font-weight: 500; line-height: 1.4; color: var(--c-ink);
