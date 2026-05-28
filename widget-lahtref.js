@@ -1464,7 +1464,16 @@
                 document.getElementById('q-loading-box').style.display = 'flex';
 
                 try {
-                    const fd = new FormData();
+                    // Guard: re-valida telefone antes de submeter (evita whatsapp vazio)
+                    const _finalNums = (phoneInput.value || '').replace(/\D/g, '');
+                    if (typeof isValidBRPhone === 'function' && !isValidBRPhone(_finalNums)) {
+                        try { document.getElementById('q-loading-box').style.display = 'none'; } catch(_) {}
+                        try { uploadStep.style.display = 'block'; } catch(_) {}
+                        try { genBtn.disabled = false; } catch(_) {}
+                        try { phoneInput.focus(); } catch(_) {}
+                        return;
+                    }
+const fd = new FormData();
                     const personResized = await resizeImage(userPhoto, 1024).catch(() => userPhoto);
                     fd.append('person_image', personResized, 'person.jpg');
                     fd.append('whatsapp', '55' + phoneInput.value.replace(/\D/g, ''));
