@@ -807,8 +807,8 @@
                         <div id="q-result-actions-col">
                             <div id="q-provas-restantes-result" class="q-provas-msg" style="text-align:center;margin-bottom:8px;"></div>
                             <button class="q-btn-outline" id="q-btn-back">Voltar ao Produto</button>
-                            <button class="q-btn-black q-res-mobile-only" id="q-retry-btn" style="display:flex;align-items:center;justify-content:center;gap:8px;">
-                                <i class="ph ph-camera"></i> Tentar outra foto
+                            <button class="q-btn-black" id="q-btn-choose-lenses" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-bottom:12px;">
+                                ESCOLHER LENTES E COMPRAR
                             </button>
                             <div id="q-related-products" style="display:none;">
                                 <h4>Veja tamb&eacute;m</h4>
@@ -1131,24 +1131,22 @@
         closeBtn.onclick = () => closeModal();
         backBtn.onclick = () => closeModal();
 
+        const chooseLensesBtn = document.getElementById('q-btn-choose-lenses');
+        if (chooseLensesBtn) {
+            chooseLensesBtn.onclick = () => {
+                const openProductLensBtn = document.querySelector('.openProductLens');
+                if (openProductLensBtn) {
+                    closeModal();
+                    setTimeout(() => {
+                        openProductLensBtn.click();
+                    }, 100);
+                }
+            };
+        }
 
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();
         });
-
-
-        retryBtn.onclick = () => {
-            document.getElementById('q-step-result').style.display = 'none';
-            photoStep.style.display = 'flex';
-            document.querySelector('.q-card-ia').classList.remove('is-result');
-            userPhoto = null;
-            pixPaymentId = null;
-            preImg.style.display = 'none';
-            if (facePlaceholder) facePlaceholder.style.display = 'flex';
-            try { cameraInput.value = ''; } catch(_) {}
-            try { galleryInput.value = ''; } catch(_) {}
-            checkFields();
-        };
 
         // Camera / gallery buttons
         document.getElementById('q-btn-camera').onclick = function() { cameraInput.click(); };
@@ -1187,26 +1185,9 @@
                 } catch(e) {}
             });
 
-            if (!products.length) return;
-
-            while (grid.firstChild) grid.removeChild(grid.firstChild);
-            products.forEach(function(p) {
-                var a = document.createElement('a');
-                a.className = 'q-related-card';
-                a.href = p.link || '#';
-                a.target = '_blank';
-                var img = document.createElement('img');
-                img.src = p.img;
-                img.alt = p.name;
-                img.loading = 'lazy';
-                var nameEl = document.createElement('span');
-                nameEl.className = 'q-related-card-name';
-                nameEl.textContent = p.name;
-                a.appendChild(img);
-                a.appendChild(nameEl);
-                grid.appendChild(a);
-            });
-            section.style.display = 'block';
+            // Recomendações removidas para Lahtref — usar apenas "ESCOLHER LENTES E COMPRAR"
+            // Não mostrar produtos relacionados
+            section.style.display = 'none';
         }
 
         function showError() {
