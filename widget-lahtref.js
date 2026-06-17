@@ -1458,7 +1458,7 @@
                     }
 const fd = new FormData();
                     const personResized = await resizeImage(userPhoto, 1024).catch(() => userPhoto);
-                    fd.append('person_image', personResized, 'person.jpg');
+                    fd.append('person_image', await toJpeg(personResized), 'person.jpg');
                     fd.append('whatsapp', '55' + phoneInput.value.replace(/\D/g, ''));
                     fd.append('phone_raw', phoneInput.value);
                     fd.append('product_name', prodName);
