@@ -155,7 +155,6 @@
 
     const styles = `
         /* ── Fontes ── */
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
 
         :root {
             --c-bg: #ffffff;
@@ -165,8 +164,8 @@
             --c-line: #e8e8e8;
             --c-accent: #111111;
             --c-danger: #cc3333;
-            --font-display: 'magazine-grotesque-regular', 'DM Sans', sans-serif;
-            --font-body: 'magazine-grotesque-regular', 'DM Sans', sans-serif;
+            --font-display: inherit;
+            --font-body: inherit;
         }
 
         /* ── Trigger (style alinhado ao auglio-tryon-btn-product-page) ── */
@@ -197,7 +196,7 @@
             width: 100%; padding: 13px 16px;
             background: transparent; color: var(--c-ink);
             border: 1.5px solid var(--c-ink); border-radius: 999px;
-            font-family: 'Work Sans', var(--font-body), sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+            font-family: inherit; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
             cursor: pointer; transition: background 0.25s, color 0.25s;
             margin-bottom: 10px; box-sizing: border-box;
         }
@@ -850,10 +849,6 @@
         }
 
         // Fontes (async, não bloqueia render)
-        const fontLink = document.createElement('link');
-        fontLink.href = 'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap';
-        fontLink.rel = 'stylesheet';
-        document.head.appendChild(fontLink);
 
         // Phosphor Icons — carregado lazily na primeira abertura do modal
         // (não carrega na init para não impactar o tempo de carregamento da página)
